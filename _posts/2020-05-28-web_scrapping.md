@@ -1,5 +1,5 @@
 ---
-title: "Web Scrapping Project"
+title: "Web Scraping Project"
 date: 2020-05-28
 tags: [web scraping, data science, data scraping]
 header:
@@ -7,15 +7,16 @@ header:
 excerpt: "Web Scraping, Data Science, Data Scraping"
 mathjax: "true"
 ---
-#  Web scrapping different news websites for Covid-19 headlines. 
+#  Web scraping different news websites for Covid-19 headlines. 
 
-This project is on web scrapping. The data available on the websites are unstructured, web scraping helps collect these unstructured data and store them in a structured form. There are different ways to extract data from websites such as online services, APIs or by writing our own code. In this project, we will implement web scraping with python using the BeautifulSoup library.
- 
+## Goal : To scrap news websites to extract relevant important data related to latest Covid-19 headlines, this can further be utilized to supplement any existing dataset or analysis on Covid-19 with the latest news updates on Covid-19.
+
+This project is on web scraping. The data available on the websites are usually unstructured, web scraping helps collect these unstructured data and store them in a structured form. There are different ways to extract data from websites such as online services, APIs or by writing our own code. In this project, we will implement web scraping with python using the BeautifulSoup library.
+
 We are basically scraping three news websites which belong to three different news organizations (CNN, NBC, CNBC) for data related Covid-19 headlines. This additional data extracted by web scraping these news websites can be used for complementing any existing dataset related to Covid-19 to perform better analysis.
 
-
+Importing all the necessary libraries
 ```python
-#importing all the necessary libraries
 from datetime import date
 from bs4 import BeautifulSoup
 import requests
@@ -24,9 +25,8 @@ import en_core_web_sm
 import pandas as pd
 ```
 
-
+Collecting all the news website urls
 ```python
-#collecting all the news website urls
 cnn_url= 'https://www.cnn.com/world/live-news/coronavirus-pandemic-07-07-20-intl/index.html'
 nbc_url= "https://www.nbcnews.com/health/coronavirus"
 cnbc_rss_url = "https://www.cnbc.com/id/10000108/device/rss/rss.html"    
@@ -38,9 +38,9 @@ So before scraping the website it's important to understand their formats:
 - For the CNBC website, we are using the RSS feed from the CNBC website, the RSS feed is basically an XML file.
 - The NBC news url doesn't have any date and it's a simple html website.
 
+Collecting the urls, format of the page, tags(under which the headlines are present) and website names for their identification in respective lists:
 
 ```python
-#collecting the urls, format of the page, tags(under which the headlines are present) and website names for their identification in respective lists
 urls = [cnn_url,nbc_url,cnbc_rss_url]
 formats=['html.parser','html.parser','xml']
 tags = ['h2','h2','description']
@@ -60,15 +60,14 @@ print('date =',d)
     date = 07-22-20
     
 
+Getting the html for the CNN website: 
 
 ```python
-#getting the html 
 html = requests.get(cnn_url).text
 ```
 
-
+Creating a soup object using the BeautifulSoup library:
 ```python
-#creating a soup object
 soup = BeautifulSoup(html)
 print(soup.title)#printing the title
 ```
@@ -78,15 +77,13 @@ print(soup.title)#printing the title
 
 To get an idea about context of the headlines in the news we are using the named entity extraction of the spacy library
 
-
+Loading the entity extraction module of spacy library:
 ```python
-#loading the entity extraction module of spacy library
 nlp = en_core_web_sm.load()
 ```
 
-
+Printing the headlines and the named entity types of the context talked about in the news headlines in the CNN website:
 ```python
-#printing the headlines and the named entity types of the context talked about in the news headlines in the CNN website
 for link in soup.find_all('h2'): #finding all the h2 html tags as the CNN website contains the headlines under this tag
     
     print("Headline : {}".format(link.text))
@@ -121,11 +118,10 @@ for link in soup.find_all('h2'): #finding all the h2 html tags as the CNN websit
     	Text : Texas Education Agency, Entry : ORG
     
 
-Collecting headlines for all the websites now:
+Collecting headlines for all the websites now.
 
-
+Crawling through the required web pages through their urls and printing the headlines and named entities associated: 
 ```python
-#crawling through the required web pages through their urls and printing the headlines and named entities associated 
 crawl_len = 0
 for url in urls:
     print("Crawling webpage ...{}".format(url))
@@ -374,9 +370,8 @@ for url in urls:
     	Text : Cuomo, Entity : PERSON
     
 
-
+Crawling through the webpages through the urls and printing the headlines
 ```python
-#crawling through the webpages through the urls and printing the headlines
 crawl_len=0
 news_dict=[]
 for url in urls:
