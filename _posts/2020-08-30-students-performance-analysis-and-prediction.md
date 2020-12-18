@@ -17,10 +17,10 @@ Some of the questions that this analysis will try to answer are:
 4. Is completing the Test Preparation course help the students in performing better.
 5. Does the quality of lunch the students consume leaves an impact on how they perform.
 
-Finally, based on the analysis a prediction model will be trained to predict how the students will perform given the factors influencing their performance and will also evaluate the performance of the model. A more detailed step-wise analysis of the same project can be found [here] 
+Finally, based on the analysis a prediction model will be trained to predict how the students will perform given the factors influencing their performance and will also evaluate the performance of the model. A more detailed step-wise analysis of the same project can be found [here](https://github.com/gaurav-arena/Students-Performance-Analysis-and-Prediction) 
 
 
-## Exploring the 'StudentPerformance' dataset. 
+## Exploring the 'Students Performance' dataset. 
 
 
 ```python
@@ -903,6 +903,7 @@ The key findings obtained from the analysis are:
 4. The students with 'standard' lunch performed better than the student with 'free/reduced' lunch. Thus the quality of lunch also impacts the performance of a student. Therefore,a standard lunch for all the students can help ensuring an overall better performance. 
 5. It was observed that the test preparation course does not have a significant impact on the performance of the students, 97.21% of the students who completed the 'Test Preparation Course'passed whereas 92.06% of the students who didn't complete 'Test Preparation Course' passed. Therefore, the school authority should analyze the efficiency of this course.
 
+## Prediction Modeling
 
 So as we have perfomed the analysis and have found some important insights and trends from the dataset, now we will try to train a model as a next step. The model should be able to accurately predict the **'Pass/Fail'** status of students provided with the features impacting the score of the student.
 
