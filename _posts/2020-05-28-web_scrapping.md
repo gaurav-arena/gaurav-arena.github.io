@@ -15,7 +15,7 @@ This project is on web scraping. The data available on the websites are usually 
 
 We are basically scraping three news websites which belong to three different news organizations (CNN, NBC, CNBC) for data related Covid-19 headlines. This additional data extracted by web scraping these news websites can be used for complementing any existing dataset related to Covid-19 to perform better analysis.
 
-Importing all the necessary libraries
+Firstly,importing all the necessary libraries:
 ```python
 from datetime import date
 from bs4 import BeautifulSoup
@@ -25,7 +25,7 @@ import en_core_web_sm
 import pandas as pd
 ```
 
-Collecting all the news website urls
+Collecting all the news website urls:
 ```python
 cnn_url= 'https://www.cnn.com/world/live-news/coronavirus-pandemic-07-07-20-intl/index.html'
 nbc_url= "https://www.nbcnews.com/health/coronavirus"
@@ -75,9 +75,9 @@ print(soup.title)#printing the title
     <title data-rh="true">July 7 coronavirus news</title>
     
 
-To get an idea about context of the headlines in the news we are using the named entity extraction of the spacy library
+To get an idea about context of the headlines in the news we are using the named entity extraction from the Spacy library.
 
-Loading the entity extraction module of spacy library:
+Loading the entity extraction module of Spacy library:
 ```python
 nlp = en_core_web_sm.load()
 ```
@@ -90,6 +90,7 @@ for link in soup.find_all('h2'): #finding all the h2 html tags as the CNN websit
     for ent in nlp(link.text).ents:
         print("\tText : {}, Entry : {}".format(ent.text,ent.label_))
 ```
+Headlines from the CNN website along with their entity types:
 
     Headline : What you need to know
     Headline : Study finds coronavirus associated with neurological complications
@@ -118,7 +119,7 @@ for link in soup.find_all('h2'): #finding all the h2 html tags as the CNN websit
     	Text : Texas Education Agency, Entry : ORG
     
 
-Collecting headlines for all the websites now.
+Now we will be collecting headlines for all the websites now.
 
 Crawling through the required web pages through their urls and printing the headlines and named entities associated: 
 ```python
@@ -140,6 +141,7 @@ for url in urls:
                 
     crawl_len=crawl_len+1
 ```
+Headlines and associated named entities for the three different news websites:
 
     Crawling webpage ...https://www.cnn.com/world/live-news/coronavirus-pandemic-07-07-20-intl/index.html
     Headline : What you need to know
@@ -370,7 +372,7 @@ for url in urls:
     	Text : Cuomo, Entity : PERSON
     
 
-Crawling through the webpages through the urls and printing the headlines
+Crawling through the webpages through the urls and printing only the headlines:
 ```python
 crawl_len=0
 news_dict=[]
@@ -391,6 +393,7 @@ for url in urls:
     
     crawl_len=crawl_len+1          
 ```
+Headlines:
 
     Headline : What you need to know
     Headline : Study finds coronavirus associated with neurological complications
@@ -487,7 +490,7 @@ for url in urls:
     Headline : "I'm sorry it's come to this, but it's a dangerous situation, and I've said it many, many times," Cuomo said during a press conference call.
     
 
-The best way to collect and store data for further analysis in python is to store it in a dataframe and thus we are storing the scrapped data in a pandas dataframe:
+The best way to collect and store this data for further analysis in python is by storing it in a pandas dataframe and thus we are storing the extracted news website data in a dataframe:
 
 
 ```python
