@@ -3,7 +3,7 @@ title: "Analyzing Students Performance"
 date: 2020-08-30
 tags: [data wrangling, data science, data analyzing, predictive modeling]
 header:
-  image: "/images/perceptron/percept.jpg"
+  image: "/images/students-performance.jpg"
 excerpt: "Data Wrangling, Data Science, Data Analyzing, Predictive Modeling"
 mathjax: "true"
 ---
@@ -17,7 +17,7 @@ Some of the questions that this analysis will try to answer are:
 4. Is completing the Test Preparation course help the students in performing better.
 5. Does the quality of lunch the students consume leaves an impact on how they perform.
 
-Finally, based on the analysis a prediction model will be trained to predict how the students will perform given the factors influencing their performance and will also evaluate the performance of the model. 
+Finally, based on the analysis a prediction model will be trained to predict how the students will perform given the factors influencing their performance and will also evaluate the performance of the model. A more detailed step-wise analysis of the same project can be found [here] 
 
 
 ## Exploring the 'StudentPerformance' dataset. 
@@ -443,14 +443,7 @@ plt.title('Percentage of students Passed/Failed')
 ```
 
 
-
-
-    Text(0.5, 1.0, 'Percentage of students Passed/Failed')
-
-
-
-
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_27_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_27_1.png)
 
 
 
@@ -461,13 +454,7 @@ plt.title('Bar-plot representing the count of students passed/failed')
 
 
 
-
-    Text(0.5, 1.0, 'Bar-plot representing the count of students passed/failed')
-
-
-
-
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_28_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_28_1.png)
 
 
 As the dataset contains both male and female students, we will try to analyze the variation of performance across the gender of the student and will try to findout if one gender performed better than the other.
@@ -512,15 +499,7 @@ sns.countplot(student['Pass/Fail'],hue = student['gender'])
 plt.ylabel('Number of students')
 ```
 
-
-
-
-    Text(0, 0.5, 'Number of students')
-
-
-
-
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_34_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_34_1.png)
 
 
 We can observe from the above count plot that there is a variation between how both the genders performed and we can see that the male students have performed overall better than the female students, next we will try to analyze the performance of the students in the three different subjects and their variation across the gender.
@@ -535,7 +514,7 @@ plt.tight_layout()
 ```
 
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_36_0.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_36_0.png)
 
 
 As can be seen from the above barplots that the male students have performed better in maths whereas the female students have relatively performed better than the male students in both reading and writing exams.
@@ -550,7 +529,7 @@ plt.tight_layout()
 ```
 
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_38_0.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_38_0.png)
 
 
 The boxplots represent the performance of the male students vs. the performance of the female students in the three courses separately. As can be seen from the medians and the number of outliers, it can be concluded that the female students performed relatively poorer than the male students in maths but they out-performed the male students in both reading and writing scores. Thus we can conclude that, in this case the performance of a student in a course varies with the gender.
@@ -596,7 +575,7 @@ plt.xticks(rotation = 45)
     
 
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_43_2.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_43_2.png)
 
 
 
@@ -607,7 +586,7 @@ plt.ylabel('Number of students')
 
 
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_44_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_44_1.png)
 
 
 
@@ -653,12 +632,12 @@ plt.tight_layout()
 ```
 
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_47_0.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_47_0.png)
 
 
 Thus it can also be noted in the above box-plots that, 'group A' has a relatively poorer performance in all the three courses whereas in comparison 'group E' performs relatively better than the other groups.
 
-Now we will try to find the impact of the educational background of the parents on the students performance:
+Now we will try to find the impact of the **educational background of the parents** on the students performance:
 
 
 ```python
@@ -701,35 +680,11 @@ plt.xticks(rotation = 45)
     
 
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_52_2.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_52_2.png)
 
 
-The percentage of students passed across the different parental level of education:
-```python
-#to find out the percentage of students passed with the parental level of education as 'some college'
-print("Percentage of students passed with the parental level of education as 'some college': {0:.2f}%"
-    .format((student[(student['parental level of education']=='some college') & (student['Pass/Fail']=='P')].shape[0]/student[student['parental level of education']=='some college'].shape[0])*100))
+Like before, the percentage of students passed across the different parental level of education are also calculated:
 
-#to find out the percentage of students passed with the parental level of education as 'associate's degree'
-print("Percentage of students passed with the parental level of education as 'associate's degree': {0:.2f}%"
-    .format((student[(student['parental level of education']=="associate's degree") & (student['Pass/Fail']=='P')].shape[0]/student[student['parental level of education']=="associate's degree"].shape[0])*100))
-
-#to find out the percentage of students passed with the parental level of education as 'high school'
-print("Percentage of students passed with the parental level of education as 'high school': {0:.2f}%"
-    .format((student[(student['parental level of education']=="high school") & (student['Pass/Fail']=='P')].shape[0]/student[student['parental level of education']=="high school"].shape[0])*100))
-
-#to find out the percentage of students passed with the parental level of education as 'some high school'
-print("Percentage of students passed with the parental level of education as 'some high school': {0:.2f}%"
-    .format((student[(student['parental level of education']=="some high school") & (student['Pass/Fail']=='P')].shape[0]/student[student['parental level of education']=="some high school"].shape[0])*100))
-
-#to find out the percentage of students passed with the parental level of education as 'bachelor's degree'
-print("Percentage of students passed with the parental level of education as 'bachelor's degree': {0:.2f}%"
-    .format((student[(student['parental level of education']=="bachelor's degree") & (student['Pass/Fail']=='P')].shape[0]/student[student['parental level of education']=="bachelor's degree"].shape[0])*100))
-
-#to find out the percentage of students passed with the parental level of education as 'master's degree'
-print("Percentage of students passed with the parental level of education as 'master's degree': {0:.2f}%"
-    .format((student[(student['parental level of education']=="master's degree") & (student['Pass/Fail']=='P')].shape[0]/student[student['parental level of education']=="master's degree"].shape[0])*100))
-```
 
     Percentage of students passed with the parental level of education as 'some college': 95.58%
     Percentage of students passed with the parental level of education as 'associate's degree': 95.50%
@@ -747,7 +702,7 @@ plt.xticks(rotation=90)
 plt.ylabel('Number of students')
 ```
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_54_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_54_1.png)
 
 
 
@@ -757,12 +712,12 @@ plt.title("Total Score across parental level of education of students")
 sns.barplot(x=student['parental level of education'],y=student['Total Score'])
 ```
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_55_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_55_1.png)
 
 
 As can be observed from the above plot that there is some influence the parent's background have on the student's performance. As can be seen, that students having parents with master's degree performed better than other and students with parents having some high school level of education performed poorer than the other groups. 
 
-Next we are going to see how the quality of lunch impacts the performance of the students:
+Next we are going to see how the **quality of lunch** impacts the performance of the students:
 
 
 ```python
@@ -801,7 +756,7 @@ student['lunch'].loc[student['Pass/Fail']=='P'].value_counts()
 sns.countplot(student['lunch'],hue=student['Pass/Fail'])
 ```
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_61_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_61_1.png)
 
 
 The percentage of students passed for the two different lunch types:
@@ -827,14 +782,14 @@ plt.title("Total Score across the type of lunch of the students")
 sns.barplot(x=student['lunch'],y=student['Total Score'],hue=student['gender'])
 ```
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_63_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_63_1.png)
 
 
 So as we can observe from the above plot, the type of lunch has an impact on the scores of the students. The students with 'standard' lunch performed better than the student with 'free/reduced' lunch.
 
-Now we are going to find out whether completing the 'Test Preparation Course' helps the students in performing better or not:
+Now we are going to find out whether completing the **'Test Preparation Course'** helps the students in performing better or not:
 
-
+The number of students who completed the 'Test preparation course' vs. the students who didn't complete the course:
 ```python
 #number of students who completed the 'Test preparation course' vs. the students who didn't complete the course
 student['test preparation course'].value_counts()
@@ -889,7 +844,7 @@ plt.title("Total Score across the status of test prep course")
 plt.xlabel('Status of Test Prep Course')
 ```
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_70_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_70_1.png)
 
 
 As can be noted that the test preparation course has an impact on the performance of the students, 97.21% of the students who completed the 'Test Preparation Course'passed whereas 92.06% of the students who didn't complete 'Test Preparation Course' passed.
@@ -906,7 +861,7 @@ plt.tight_layout()
 ```
 
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_73_0.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_73_0.png)
 
 
 As can be seen from the above plots that there is a strong correlation between the scores.
@@ -934,16 +889,24 @@ sns.heatmap(student.corr(), cmap ="Reds")
 plt.xticks(rotation=90)
 ```
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_76_1.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_76_1.png)
 
 
 As can be observed from the above heat-map that there is a strong correlation between 'reading score' and 'writing score'. The 'math score' is also correlated with the 'reading score' and 'writing score'.
 
-So as we have analysed the impact of different features on the student's performance and we observed that factors like 'gender', 'race/ethinicty', 'lunch', 'test preparation course' and 'parental level of education' impacted the scores obtained by the students. 
+So as we have analyzed the impact of different features on the student's performance and we observed that factors like 'gender', 'race/ethinicty', 'lunch', 'test preparation course' and 'parental level of education' impacted the scores obtained by the students.
 
-Now we will try to train a model to be able to predict the **'Pass/Fail'** status of students provided with the features impacting the score of the student.
+The key findings obtained from the analysis are:
+1. The overall performance of both the genders is almost the same with male students performing slightly better than the female. Moreover, it was also observed that the female students performed relatively poorer than the male students in Maths but they out-performed the male students in both Reading and Writing. Thus the performance of a student in a course has some correlation with their gender. Therefore, the school authority can put more emphasis for ensuring that both the genders perform equally well in all the courses.
+2. The race/ethnicity group 'group E' has performed better than all other groups and the group 'group A' has performed poorer than any other ethnic groups. It was also observed that the performance of students in race/ethinicity group gets better as we move 'group A' to 'group E'. Thus the performance of a student in a course has some correlation with their race/ethnicity. Therefore, the authority should put more emphasis on equalizing the development of the ethnic groups.
+3. The students having parents with master's degree performed better than other and students with parents having some high school level of education performed poorer than the other groups. Thus there is some correlation between the performance of a student with their parents educational background. Therefore, there should be more emphasis on the importance of education. 
+4. The students with 'standard' lunch performed better than the student with 'free/reduced' lunch. Thus the quality of lunch also impacts the performance of a student. Therefore,a standard lunch for all the students can help ensuring an overall better performance. 
+5. It was observed that the test preparation course does not have a significant impact on the performance of the students, 97.21% of the students who completed the 'Test Preparation Course'passed whereas 92.06% of the students who didn't complete 'Test Preparation Course' passed. Therefore, the school authority should analyze the efficiency of this course.
 
 
+So as we have perfomed the analysis and have found some important insights and trends from the dataset, now we will try to train a model as a next step. The model should be able to accurately predict the **'Pass/Fail'** status of students provided with the features impacting the score of the student.
+
+As we saw during the analysis that the course scores were highly correlated to each other, thus keeping all of them for model fitting does not make sense and rather it can impact the performance of the model, therefore, we have only kept the 'Total Score' in the set of features.
 ```python
 X=student[['gender','race/ethnicity','parental level of education','lunch','test preparation course','Total Score']]
 X.head()
@@ -1050,7 +1013,7 @@ X = oh.fit_transform(X)
 
   
 ```python
-#collecting the total score of the students from the dataset
+#collecting the status
 y=student['Pass/Fail']
 y.head()
 ```
@@ -1067,19 +1030,19 @@ y.head()
 
 
 
-
+As the output/dependent is also categorical therefore we need to encode them:
 ```python
 lb=LabelEncoder()
 y=lb.fit_transform(y)
 ```
 
-
+Dividing the dataset into training and validation subsets:
 ```python
 # Divide data into training and validation subsets
 X_train, X_valid, y_train, y_valid = train_test_split(X, y, train_size=0.8, test_size=0.2,random_state=0)
 ```
 
-
+Using a Random Forest model and fitting it with the training subset:
 ```python
 predictor = RandomForestRegressor()
 predictor.fit(X_train,y_train)
@@ -1092,7 +1055,7 @@ predictor.fit(X_train,y_train)
 
 
 
-
+Model predicting using the validation subset:
 ```python
 #model predicting
 preds=predictor.predict(X_valid)#predictions made by the model
@@ -1119,7 +1082,7 @@ mae(y_valid,preds)
 
 
 
-For better evaluation, we will perform cross validation and will try to obtain the Mean Absolute Error(MAE) value:
+As we can see that the Mean Absolute Error value for the model prediction is 0.02 which is an indication that the model is performing very accurately. For better evaluation, we will perform cross validation and will try to obtain the Mean Absolute Error(MAE) value after cross validation:
 
 
 ```python
@@ -1131,7 +1094,7 @@ print("MAE scores:\n", scores)
      [0.04615 0.0387  0.0384  0.0194  0.02555]
     
 
-
+The best way to visualize the performance of a prediction model is through a confusion matrix:
 ```python
 from sklearn.metrics import confusion_matrix
 
@@ -1145,14 +1108,11 @@ plt.show()
 ```
 
 
-![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_101_0.png)
+![png](/images/students-performance/students-performance-analysis-and-prediction_101_0.png)
 
 
+Another logical way of evaluating the performance of a predictor model is through finding out it's Precision and Recall values.
 
-```python
-from sklearn.metrics import precision_score as ps
-from sklearn.metrics import recall_score as rs
-```
 
 
 ```python
@@ -1170,3 +1130,4 @@ print('Recall: %.3f' % rs(y_valid, preds))
     Recall: 0.989
     
 
+Thus from the above Precision and Recall values we can conclude that the model is predicting the performance of the students very accurately.
