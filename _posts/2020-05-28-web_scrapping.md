@@ -3,7 +3,7 @@ title: "Web Scraping Project"
 date: 2020-05-28
 tags: [web scraping, data science, data scraping]
 header:
-  image: "/images/web-scraping.png"
+  image: "/images/web-scraping.jpg"
 excerpt: "Web Scraping, Data Science, Data Scraping"
 mathjax: "true"
 ---
@@ -11,7 +11,7 @@ mathjax: "true"
 
 ## Goal : To scrap news websites to extract relevant important data related to latest Covid-19 headlines, this can further be utilized to supplement any existing dataset or analysis on Covid-19 with the latest news updates on Covid-19.
 
-This project is on web scraping. The data available on the websites are usually unstructured, web scraping helps collect these unstructured data and store them in a structured form. There are different ways to extract data from websites such as online services, APIs or by writing our own code. In this project, we will implement web scraping with python using the BeautifulSoup library. A more step-wise detailed notebook for this project can be found [link]
+This project is on web scraping. The data available on the websites are usually unstructured, web scraping helps collect these unstructured data and store them in a structured form. There are different ways to extract data from websites such as online services, APIs or by writing our own code. In this project, we will implement web scraping with python using the BeautifulSoup library. A more step-wise detailed notebook for this project can be found [here](https://github.com/gaurav-arena/News-Website-Scrapping-Crawling)
 
 *Pre-requisites:* 1. Basic knowledge of Python and HTML.
                   2. Python  3 should be installed.
