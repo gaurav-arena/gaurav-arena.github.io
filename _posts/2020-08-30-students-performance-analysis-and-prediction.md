@@ -169,7 +169,7 @@ student.select_dtypes('object').nunique()
 
 
 
-Now as we about know the number of unique categories present in each of the categorical variable, it is important to see what are these unique category values in each of them.
+Now since we know the number of unique categories present in each of the categorical variable, it is important to see what are these unique category values in each of them.
 
 
 ```python
@@ -289,7 +289,7 @@ We will add a new feature(column) called 'Total Score' which will be basically t
 student['Total Score']=student['math score']+student['reading score']+student['writing score']
 ```
 
-We will also add a new column 'Pass/Fail', which will basically indicate the status of the student i.e. whether they have passed(P) or failed(F). To decide whether a student have passed we are evaluatin a condition on the total score obtained by the student. We are assuming that the passing criterion if a student has a Total Score of 120 or above then they have Passed, otherwise, they Failed.
+We will also add a new column 'Pass/Fail', which will basically indicate the status of the student i.e. whether they have passed(P) or failed(F). To decide whether a student have passed we are evaluatin a condition on the total score obtained by the student. We are assuming that the passing criterion if a student has a Total Score of 120 or above then they Pass, otherwise, they Fail.
 
 
 ```python
@@ -434,7 +434,7 @@ student['Pass/Fail'].value_counts()
 
 So according to the count, a total of 939 students have passed and 61 students have failed out of the 1000 students.
 
-Now lets try to visualize the performace of the students, sometimes visualization can help in exploring underlying trends/relationships in a better way:
+Now lets try to visualize the performace of the students, sometimes visualization can help in exploring any underlying trends/relationships in a better way:
 
 
 ```python
@@ -470,9 +470,9 @@ plt.title('Bar-plot representing the count of students passed/failed')
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_28_1.png)
 
 
-As the dataset contains both male and female students, we will try to analyze the variation of performance across the gender of the student and will try to findout if one gender performed better than the other
+As the dataset contains both male and female students, we will try to analyze the variation of performance across the gender of the student and will try to findout if one gender performed better than the other.
 
-
+For that first let's find out the number of male and female students in the dataset:
 ```python
 # this displays the number of male and female students in the class
 student['gender'].value_counts()
@@ -487,7 +487,7 @@ student['gender'].value_counts()
 
 
 
-So as we can see that out of the 1000 students in the dataset, 518 are female and 482 are male. Thus the ratio of male and female students are almost uniform. Now we will try to findout how did the male & female students performed when compared to each other.
+So as we can see that out of the 1000 students in the dataset, 518 are female and 482 are male. Thus the ratio of male and female students are almost same which is good. Now we will try to findout how did the male & female students performed when compared to each other.
 
 
 ```python
@@ -504,7 +504,7 @@ print("Percentage of male students passed: {0:.2f}%"
     Percentage of male students passed: 95.02%
     
 
-Therefore from the above analysis we can observe that the male students have overall performed relatively better than the female students
+Therefore from the above analysis we can observe that the male students have overall performed relatively better than the female students.
 
 
 ```python
@@ -555,7 +555,7 @@ plt.tight_layout()
 
 The boxplots represent the performance of the male students vs. the performance of the female students in the three courses separately. As can be seen from the medians and the number of outliers, it can be concluded that the female students performed relatively poorer than the male students in maths but they out-performed the male students in both reading and writing scores. Thus we can conclude that, in this case the performance of a student in a course varies with the gender.
 
-Next, trying to analyse whether the **ethnicity/race** of the student plays any role in their performance.
+Next, we will try to analyse whether the **ethnicity/race** of the student plays any role in their performance.
 
 
 ```python
@@ -596,18 +596,6 @@ plt.xticks(rotation = 45)
     
 
 
-
-
-    (array([0, 1, 2, 3, 4]),
-     [Text(0, 0, 'group B'),
-      Text(1, 0, 'group C'),
-      Text(2, 0, 'group A'),
-      Text(3, 0, 'group D'),
-      Text(4, 0, 'group E')])
-
-
-
-
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_43_2.png)
 
 
@@ -616,12 +604,6 @@ plt.xticks(rotation = 45)
 sns.countplot(student['race/ethnicity'],hue=student['Pass/Fail'])
 plt.ylabel('Number of students')
 ```
-
-
-
-
-    Text(0, 0.5, 'Number of students')
-
 
 
 
@@ -674,9 +656,9 @@ plt.tight_layout()
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_47_0.png)
 
 
-Thus the above observation can also be noted in the above box-plots, 'group A' has a relatively poorer performance in all the three courses whereas in comparison 'group E' performs relatively better than the other groups.
+Thus it can also be noted in the above box-plots that, 'group A' has a relatively poorer performance in all the three courses whereas in comparison 'group E' performs relatively better than the other groups.
 
-Now we will try to find the impact of the educational background of the parents on the students performance.
+Now we will try to find the impact of the educational background of the parents on the students performance:
 
 
 ```python
@@ -699,7 +681,7 @@ student['parental level of education'].value_counts()
 
 Thus among the 1000 students, 226 students have parents with 'some college' background, 222 with 'associate's degree',196 have 'high school' background, 179 have parents with 'some high school' background, 118 with 'bachelor's degree',59 with 'master's degree' background. Now we will try to analyze how the performance of the students vary depending on their parents educational background.
 
-
+Now, the number of students passed for each parental level of education:
 ```python
 #number of students passed across the parental levels of education 
 print("The number of students passed across the different parental levels of education: ")
@@ -719,23 +701,10 @@ plt.xticks(rotation = 45)
     
 
 
-
-
-    (array([0, 1, 2, 3, 4, 5]),
-     [Text(0, 0, "bachelor's degree"),
-      Text(1, 0, 'some college'),
-      Text(2, 0, "master's degree"),
-      Text(3, 0, "associate's degree"),
-      Text(4, 0, 'high school'),
-      Text(5, 0, 'some high school')])
-
-
-
-
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_52_2.png)
 
 
-
+The percentage of students passed across the different parental level of education:
 ```python
 #to find out the percentage of students passed with the parental level of education as 'some college'
 print("Percentage of students passed with the parental level of education as 'some college': {0:.2f}%"
@@ -778,14 +747,6 @@ plt.xticks(rotation=90)
 plt.ylabel('Number of students')
 ```
 
-
-
-
-    Text(0, 0.5, 'Number of students')
-
-
-
-
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_54_1.png)
 
 
@@ -795,14 +756,6 @@ plt.figure(figsize=(10,5))
 plt.title("Total Score across parental level of education of students")
 sns.barplot(x=student['parental level of education'],y=student['Total Score'])
 ```
-
-
-
-
-    <AxesSubplot:title={'center':'Total Score across parental level of education of students'}, xlabel='parental level of education', ylabel='Total Score'>
-
-
-
 
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_55_1.png)
 
@@ -828,7 +781,7 @@ student['lunch'].value_counts()
 
 Thus out of the 1000 students, 645 have a standard lunch and 355 have a free/reduced lunch. Now we will analyze how the type of lunch varies the performance of the students.
 
-
+The number of students passed for the two types of lunch:
 ```python
 #number of students passed across the type of lunch 
 student['lunch'].loc[student['Pass/Fail']=='P'].value_counts()
@@ -848,18 +801,10 @@ student['lunch'].loc[student['Pass/Fail']=='P'].value_counts()
 sns.countplot(student['lunch'],hue=student['Pass/Fail'])
 ```
 
-
-
-
-    <AxesSubplot:xlabel='lunch', ylabel='count'>
-
-
-
-
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_61_1.png)
 
 
-
+The percentage of students passed for the two different lunch types:
 ```python
 #to find out the percentage of students passed with the lunch type as 'standard'
 print("Percentage of students passed with the lunch type as 'standard': {0:.2f}%"
@@ -882,20 +827,12 @@ plt.title("Total Score across the type of lunch of the students")
 sns.barplot(x=student['lunch'],y=student['Total Score'],hue=student['gender'])
 ```
 
-
-
-
-    <AxesSubplot:title={'center':'Total Score across the type of lunch of the students'}, xlabel='lunch', ylabel='Total Score'>
-
-
-
-
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_63_1.png)
 
 
 So as we can observe from the above plot, the type of lunch has an impact on the scores of the students. The students with 'standard' lunch performed better than the student with 'free/reduced' lunch.
 
-Now we are going to find out whether completing the 'Test Preparation Course' helps the students in performing better or not.
+Now we are going to find out whether completing the 'Test Preparation Course' helps the students in performing better or not:
 
 
 ```python
@@ -914,7 +851,7 @@ student['test preparation course'].value_counts()
 
 Thus out of the 1000 students, 642 students didn't complete the 'Test preparation course' and 358 students completed it.
 
-
+The number of students passed across the status of completion of the test preparation course:
 ```python
 #number of students passed across the status of completion of the test preparation course 
 print("The number of students passed across the status of completion of the test preparation course:")
@@ -928,7 +865,7 @@ print(student['test preparation course'].loc[student['Pass/Fail']=='P'].value_co
     Name: test preparation course, dtype: int64
     
 
-
+The percentage of students passed across the two different status of completion of the test preparation course:
 ```python
 #to find out the percentage of students passed with the test preparation course status as 'none'
 print("Percentage of students passed with the test preparation course status as 'none': {0:.2f}%"
@@ -951,14 +888,6 @@ sns.barplot(x=student['test preparation course'],y=student['Total Score'])
 plt.title("Total Score across the status of test prep course")
 plt.xlabel('Status of Test Prep Course')
 ```
-
-
-
-
-    Text(0.5, 0, 'Status of Test Prep Course')
-
-
-
 
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_70_1.png)
 
@@ -1005,22 +934,10 @@ sns.heatmap(student.corr(), cmap ="Reds")
 plt.xticks(rotation=90)
 ```
 
-
-
-
-    (array([0.5, 1.5, 2.5, 3.5]),
-     [Text(0.5, 0, 'math score'),
-      Text(1.5, 0, 'reading score'),
-      Text(2.5, 0, 'writing score'),
-      Text(3.5, 0, 'Total Score')])
-
-
-
-
 ![png](students-performance-analysis-and-prediction_files/students-performance-analysis-and-prediction_76_1.png)
 
 
-As can be observed from the above heat-map that there is a strong correlation between 'reading score' and 'writing score'. The 'math score' is also correlated with the 'reading score' and 'writing score'
+As can be observed from the above heat-map that there is a strong correlation between 'reading score' and 'writing score'. The 'math score' is also correlated with the 'reading score' and 'writing score'.
 
 So as we have analysed the impact of different features on the student's performance and we observed that factors like 'gender', 'race/ethinicty', 'lunch', 'test preparation course' and 'parental level of education' impacted the scores obtained by the students. 
 
@@ -1113,7 +1030,7 @@ X.head()
 
 
 
-As we know to train a model with categorical variables, they must be first converted into a form which can be utilized for the model fitting purpose. We have used the One Hot Encoding technique to transform the categorical variables.
+As we know, in order to train a model with categorical variables, they must be first converted into a form which can be utilized for the model fitting purpose. We have used the One Hot Encoding technique to transform the categorical variables.
 
 
 ```python
