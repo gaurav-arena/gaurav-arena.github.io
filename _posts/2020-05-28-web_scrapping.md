@@ -11,8 +11,12 @@ mathjax: "true"
 
 ## Goal : To scrap news websites to extract relevant important data related to latest Covid-19 headlines, this can further be utilized to supplement any existing dataset or analysis on Covid-19 with the latest news updates on Covid-19.
 
-This project is on web scraping. The data available on the websites are usually unstructured, web scraping helps collect these unstructured data and store them in a structured form. There are different ways to extract data from websites such as online services, APIs or by writing our own code. In this project, we will implement web scraping with python using the BeautifulSoup library.
+This project is on web scraping. The data available on the websites are usually unstructured, web scraping helps collect these unstructured data and store them in a structured form. There are different ways to extract data from websites such as online services, APIs or by writing our own code. In this project, we will implement web scraping with python using the BeautifulSoup library. A more step-wise detailed notebook for this project can be found [link]
 
+*Pre-requisites:* 1. Basic knowledge of Python and HTML.
+                  2. Python  3 should be installed.
+                  3. All the required python libraries should be installed.
+                  
 We are basically scraping three news websites which belong to three different news organizations (CNN, NBC, CNBC) for data related Covid-19 headlines. This additional data extracted by web scraping these news websites can be used for complementing any existing dataset related to Covid-19 to perform better analysis.
 
 Firstly,importing all the necessary libraries:
@@ -32,13 +36,13 @@ nbc_url= "https://www.nbcnews.com/health/coronavirus"
 cnbc_rss_url = "https://www.cnbc.com/id/10000108/device/rss/rss.html"    
 ```
 
-So before scraping the website it's important to understand their formats:
+So before scraping the website it's important to understand their URL formats:
 
-- As we can see that the CNN website has a date attached to it and they update only the date for each new day and the rest remains same and thus it is a dynamic html website.
+- If we look at the CNN website URL, it has a date attached to it and they update only the date for each new day and the rest remains same and thus it is a dynamic HTML website.
 - For the CNBC website, we are using the RSS feed from the CNBC website, the RSS feed is basically an XML file.
-- The NBC news url doesn't have any date and it's a simple html website.
+- The NBC news URL doesn't have any date and it's a simple HTML website.
 
-Collecting the urls, format of the page, tags(under which the headlines are present) and website names for their identification in respective lists:
+Collecting the URLs, format of the page, tags(under which the headlines are present) and website names for their identification in their respective lists:
 
 ```python
 urls = [cnn_url,nbc_url,cnbc_rss_url]
