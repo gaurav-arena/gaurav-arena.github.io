@@ -3,7 +3,7 @@ title: "Analyzing Students Performance"
 date: 2020-08-30
 tags: [data wrangling, data science, data analyzing, predictive modeling]
 header:
-  image: "/images/students-performance.jpg"
+  image: "/images/exam-wallpaper.jpg"
 excerpt: "Data Wrangling, Data Science, Data Analyzing, Predictive Modeling"
 mathjax: "true"
 ---
