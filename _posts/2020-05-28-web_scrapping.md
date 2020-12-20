@@ -244,137 +244,7 @@ Headlines and associated named entities for the three different news websites:
     	Text : MSNBC, Entity : ORG
     Headline : 'Into The Red Zone': An NBC News NOW documentary 
     	Text : NBC News, Entity : ORG
-    Headline : Portrait of a neighborhood under lockdown
-    Headline : Photos capture empty cities across the globe
-    Headline : New Yorkers are giving nightly ovations to health workers. These are their portraits
-    	Text : New Yorkers, Entity : NORP
-    Headline : In case you missed it
-    Headline : These states have the most coronavirus cases. See the day-by-day breakdown.
-    Headline : Coronavirus stress among hospital workers leads to 'recharge rooms'
-    	Text : Coronavirus, Entity : ORG
-    Headline : FDA recalls more hand sanitizers due to toxic chemical
-    	Text : FDA, Entity : ORG
-    Headline : As pro sports return, athletes are divided on wearing masks
-    Headline : Virus surge in June preceded by May surge in Yelp entries for bars, restaurants
-    	Text : June, Entity : DATE
-    	Text : May, Entity : DATE
-    	Text : Yelp, Entity : GPE
-    Headline : Trump returns to the coronavirus spotlight
-    Headline : Experts voice concern over COVID-19 vaccine trials excluding hardest-hit populations
-    Headline : Businesses are passing along COVID fees. Consumers are split on whether to accept them.
-    	Text : COVID, Entity : ORG
-    Headline : CDC: Antibody tests show virus rates 10 times higher than reported
-    	Text : CDC, Entity : ORG
-    	Text : 10, Entity : CARDINAL
-    Headline : Lack of mask mandate and testing delays 'an equation for disaster' in Florida, experts warn
-    	Text : Florida, Entity : GPE
-    Crawling webpage ...https://www.cnbc.com/id/10000108/device/rss/rss.html
-    Headline : Latest news for health care. 
-    Headline : Contract tracing is being done after positive test in office building where many senior advisers and top officials work.
-    Headline : "Hopefully the approval process will go very quickly, and we think we have a winner there," President Donald Trump said Wednesday.
-    	Text : Donald Trump, Entity : PERSON
-    	Text : Wednesday, Entity : DATE
-    Headline : California reported more than 12,800 coronavirus cases on Tuesday, the highest reported daily tally the state has recorded so far, Gov. Gavin Newsom said Wednesday.
-    	Text : California, Entity : GPE
-    	Text : more than 12,800, Entity : CARDINAL
-    	Text : Tuesday, Entity : DATE
-    	Text : daily, Entity : DATE
-    	Text : Gavin Newsom, Entity : PERSON
-    	Text : Wednesday, Entity : DATE
-    Headline : Covering all things Covid. Physician, bioethicist and author, Dr. Zeke Emanuel, discusses the pandemic's impact on our health care system, the ethics of reopening schools, and just how long until things go back to normal.
-    	Text : Zeke Emanuel, Entity : PERSON
-    Headline : Billionaire Bill Gates on Wednesday denied conspiracy theories that accuse the tech mogul and philanthropist of wanting to use coronavirus vaccines to implant tracking devices in people.
-    	Text : Bill Gates, Entity : PERSON
-    	Text : Wednesday, Entity : DATE
-    Headline : Dr. David Satcher, former director of the Centers for Disease Control of Prevention, said he would grade the nation's leadership amid the pandemic a C "at best."
-    	Text : David Satcher, Entity : PERSON
-    	Text : the Centers for Disease Control of Prevention, Entity : ORG
-    Headline : HHS abruptly changed the way hospitals report coronavirus data to the federal government, tying compliance to supply of a key drug.
-    	Text : HHS, Entity : ORG
-    Headline : New York Gov. Andrew Cuomo said he was encouraged by President Donald Trump's support of masks on Tuesday after months of resistance.
-    	Text : New York, Entity : GPE
-    	Text : Andrew Cuomo, Entity : PERSON
-    	Text : Donald Trump, Entity : PERSON
-    	Text : Tuesday, Entity : DATE
-    	Text : months, Entity : DATE
-    Headline : "Right now we have close to 1,000 casualties a day so if we don't change that trajectory, you could do the math," the former FDA commissioner told CNBC on Wednesday.
-    	Text : 1,000, Entity : CARDINAL
-    	Text : FDA, Entity : ORG
-    	Text : CNBC, Entity : ORG
-    	Text : Wednesday, Entity : DATE
-    Headline : Brazil has struggled to contain the spread of the coronavirus and more than 80,000 people have died. Here's what went wrong, according to locals.
-    	Text : Brazil, Entity : GPE
-    	Text : more than 80,000, Entity : CARDINAL
-    Headline : FEMA Administrator Pete Gaynor also told lawmakers that the reliance on overseas suppliers for PPE a "national security issue."
-    	Text : FEMA, Entity : ORG
-    	Text : Pete Gaynor, Entity : PERSON
-    Headline : Fauci also said U.S. health officials do not see "an end in sight" to the pandemic.
-    	Text : Fauci, Entity : ORG
-    	Text : U.S., Entity : GPE
-    Headline : The House Committee on Homeland Security plans to question FEMA administrator Pete Gaynor about the Federal government's coronavirus response and its "various shortcomings."
-    	Text : The House Committee on Homeland Security, Entity : ORG
-    	Text : FEMA, Entity : ORG
-    	Text : Pete Gaynor, Entity : PERSON
-    Headline : The coronavirus has infected more than 14.98 million people globally as of Wednesday, killing at least 617,415 people. 
-    	Text : more than 14.98 million, Entity : CARDINAL
-    	Text : Wednesday, Entity : DATE
-    	Text : at least 617,415, Entity : CARDINAL
-    Headline : Dow futures pointed to a modest decline at Wednesday's open as investors digest two breaking stories.
-    	Text : Wednesday, Entity : DATE
-    	Text : two, Entity : CARDINAL
-    Headline : A large number of small businesses that closed in March — when restrictions around social movements when into effect — are not going to reopen even when the situation improves, according to Raghuram Rajan.
-    	Text : March, Entity : DATE
-    	Text : Raghuram Rajan, Entity : PERSON
-    Headline : Biopharmaceutical company Arcturus and Singapore's Duke-NUS said they will begin human dosing tests of their potential coronavirus vaccine as soon as possible.
-    	Text : Singapore, Entity : GPE
-    	Text : Duke-NUS, Entity : ORG
-    Headline : Trump also acknowledged Tuesday that the pandemic will probably "get worse before it gets better."
-    	Text : Trump, Entity : ORG
-    	Text : Tuesday, Entity : DATE
-    Headline : "We need all states to ensure we're doing everything we can to better control the virus. If we can do that, then we'll be able to have the tests that we need," LabCorp CEO Adam Schechter told CNBC.
-    	Text : Adam Schechter, Entity : PERSON
-    	Text : CNBC, Entity : ORG
-    Headline : President Donald Trump socialized years ago with accused child sex trafficker Jeffrey Epstein and his accused procurer, Ghislaine Maxwell.
-    	Text : Donald Trump, Entity : PERSON
-    	Text : years ago, Entity : DATE
-    	Text : Jeffrey Epstein, Entity : PERSON
-    	Text : Ghislaine Maxwell, Entity : PERSON
-    Headline : Trump's comments come after the president has sent mixed messages for months on whether he supports the use of masks as a public health intervention to prevent the spread of the virus.
-    	Text : Trump, Entity : ORG
-    	Text : months, Entity : DATE
-    Headline : After the coronavirus created a tidal wave of business interruption lawsuits, the insurance industry is pushing for a partly government-backed fund to cover future pandemics.
-    Headline : President Donald Trump warned Tuesday the coronavirus pandemic in the United States will probably "get worse before it gets better."
-    	Text : Donald Trump, Entity : PERSON
-    	Text : Tuesday, Entity : DATE
-    	Text : the United States, Entity : GPE
-    Headline : Atlantic Health System CEO Brian Gragnolati told CNBC that mortality rates and length of stays in ICUs for coronavirus patients have come down as a result of new approaches to care.
-    	Text : Atlantic Health System, Entity : ORG
-    	Text : Brian Gragnolati, Entity : PERSON
-    	Text : CNBC, Entity : ORG
-    Headline : Texas and Florida hit a new grim record Monday for daily coronavirus deaths based on a seven-day moving average, as hospitalizations continue to surge in 34 states across the United States.
-    	Text : Texas, Entity : GPE
-    	Text : Florida, Entity : GPE
-    	Text : Monday, Entity : DATE
-    	Text : daily, Entity : DATE
-    	Text : seven-day, Entity : DATE
-    	Text : 34, Entity : CARDINAL
-    	Text : the United States, Entity : GPE
-    Headline : The White House said Trump, who faces a tough reelection fight, plans to use the restarted briefings to deliver "good news" about his response to the coronavirus pandemic.
-    	Text : The White House, Entity : ORG
-    	Text : Trump, Entity : ORG
-    Headline : Fauci has faced criticism in recent weeks from President Donald Trump and other administration officials surrounding his response to the pandemic.
-    	Text : Fauci, Entity : ORG
-    	Text : recent weeks, Entity : DATE
-    	Text : Donald Trump, Entity : PERSON
-    Headline : United and other airlines are scrambling to cut costs as demand for air travel remains depressed in the coronavirus pandemic.
-    	Text : United, Entity : ORG
-    Headline : Last week, Cuomo announced that the state would place "enforcement teams" at New York airports to ensure compliance with the travel advisory.
-    	Text : Last week, Entity : DATE
-    	Text : Cuomo, Entity : PERSON
-    	Text : New York, Entity : GPE
-    Headline : "I'm sorry it's come to this, but it's a dangerous situation, and I've said it many, many times," Cuomo said during a press conference call.
-    	Text : Cuomo, Entity : PERSON
-    
+   ..........
 
 Crawling through the webpages through the urls and printing only the headlines:
 ```python
@@ -450,51 +320,12 @@ Headlines:
     Headline : Portrait of a neighborhood under lockdown
     Headline : Photos capture empty cities across the globe
     Headline : New Yorkers are giving nightly ovations to health workers. These are their portraits
-    Headline : In case you missed it
-    Headline : These states have the most coronavirus cases. See the day-by-day breakdown.
-    Headline : Coronavirus stress among hospital workers leads to 'recharge rooms'
-    Headline : FDA recalls more hand sanitizers due to toxic chemical
-    Headline : As pro sports return, athletes are divided on wearing masks
-    Headline : Virus surge in June preceded by May surge in Yelp entries for bars, restaurants
-    Headline : Trump returns to the coronavirus spotlight
-    Headline : Experts voice concern over COVID-19 vaccine trials excluding hardest-hit populations
-    Headline : Businesses are passing along COVID fees. Consumers are split on whether to accept them.
-    Headline : CDC: Antibody tests show virus rates 10 times higher than reported
-    Headline : Lack of mask mandate and testing delays 'an equation for disaster' in Florida, experts warn
-    Headline : Latest news for health care. 
-    Headline : Contract tracing is being done after positive test in office building where many senior advisers and top officials work.
     Headline : "Hopefully the approval process will go very quickly, and we think we have a winner there," President Donald Trump said Wednesday.
     Headline : California reported more than 12,800 coronavirus cases on Tuesday, the highest reported daily tally the state has recorded so far, Gov. Gavin Newsom said Wednesday.
-    Headline : Covering all things Covid. Physician, bioethicist and author, Dr. Zeke Emanuel, discusses the pandemic's impact on our health care system, the ethics of reopening schools, and just how long until things go back to normal.
-    Headline : Billionaire Bill Gates on Wednesday denied conspiracy theories that accuse the tech mogul and philanthropist of wanting to use coronavirus vaccines to implant tracking devices in people.
-    Headline : Dr. David Satcher, former director of the Centers for Disease Control of Prevention, said he would grade the nation's leadership amid the pandemic a C "at best."
-    Headline : HHS abruptly changed the way hospitals report coronavirus data to the federal government, tying compliance to supply of a key drug.
-    Headline : New York Gov. Andrew Cuomo said he was encouraged by President Donald Trump's support of masks on Tuesday after months of resistance.
-    Headline : "Right now we have close to 1,000 casualties a day so if we don't change that trajectory, you could do the math," the former FDA commissioner told CNBC on Wednesday.
-    Headline : Brazil has struggled to contain the spread of the coronavirus and more than 80,000 people have died. Here's what went wrong, according to locals.
-    Headline : FEMA Administrator Pete Gaynor also told lawmakers that the reliance on overseas suppliers for PPE a "national security issue."
-    Headline : Fauci also said U.S. health officials do not see "an end in sight" to the pandemic.
-    Headline : The House Committee on Homeland Security plans to question FEMA administrator Pete Gaynor about the Federal government's coronavirus response and its "various shortcomings."
-    Headline : The coronavirus has infected more than 14.98 million people globally as of Wednesday, killing at least 617,415 people. 
-    Headline : Dow futures pointed to a modest decline at Wednesday's open as investors digest two breaking stories.
-    Headline : A large number of small businesses that closed in March — when restrictions around social movements when into effect — are not going to reopen even when the situation improves, according to Raghuram Rajan.
-    Headline : Biopharmaceutical company Arcturus and Singapore's Duke-NUS said they will begin human dosing tests of their potential coronavirus vaccine as soon as possible.
-    Headline : Trump also acknowledged Tuesday that the pandemic will probably "get worse before it gets better."
-    Headline : "We need all states to ensure we're doing everything we can to better control the virus. If we can do that, then we'll be able to have the tests that we need," LabCorp CEO Adam Schechter told CNBC.
-    Headline : President Donald Trump socialized years ago with accused child sex trafficker Jeffrey Epstein and his accused procurer, Ghislaine Maxwell.
-    Headline : Trump's comments come after the president has sent mixed messages for months on whether he supports the use of masks as a public health intervention to prevent the spread of the virus.
-    Headline : After the coronavirus created a tidal wave of business interruption lawsuits, the insurance industry is pushing for a partly government-backed fund to cover future pandemics.
-    Headline : President Donald Trump warned Tuesday the coronavirus pandemic in the United States will probably "get worse before it gets better."
-    Headline : Atlantic Health System CEO Brian Gragnolati told CNBC that mortality rates and length of stays in ICUs for coronavirus patients have come down as a result of new approaches to care.
-    Headline : Texas and Florida hit a new grim record Monday for daily coronavirus deaths based on a seven-day moving average, as hospitalizations continue to surge in 34 states across the United States.
-    Headline : The White House said Trump, who faces a tough reelection fight, plans to use the restarted briefings to deliver "good news" about his response to the coronavirus pandemic.
-    Headline : Fauci has faced criticism in recent weeks from President Donald Trump and other administration officials surrounding his response to the pandemic.
-    Headline : United and other airlines are scrambling to cut costs as demand for air travel remains depressed in the coronavirus pandemic.
-    Headline : Last week, Cuomo announced that the state would place "enforcement teams" at New York airports to ensure compliance with the travel advisory.
-    Headline : "I'm sorry it's come to this, but it's a dangerous situation, and I've said it many, many times," Cuomo said during a press conference call.
+    ......
     
 
-The best way to collect and store this data for further analysis in python is by storing it in a pandas dataframe and thus we are storing the extracted news website data in a dataframe:
+The best way to collect and store this data for further analysis in python is by storing it in a pandas dataframe and thus we are storing the extracted news website data in a dataframe, this can be stored as a CSV or Excel file and then it can be combined with other related datasets for more extensive analysis :
 
 
 ```python
