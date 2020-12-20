@@ -3,7 +3,7 @@ title: "Web Scraping Project"
 date: 2020-05-28
 tags: [web scraping, data science, data scraping]
 header:
-  image: "/images/web-scraping.jpg"
+  image: "/images/webs.png"
 excerpt: "Web Scraping, Data Science, Data Scraping"
 mathjax: "true"
 ---
