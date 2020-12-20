@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/images/zakim.jpg"
+  image: "/images/about.jpg"
 ---
 
 Data Science and Machine Learning enthusiast who enjoys exploring and analyzing data, and building models that translate data points into business insights. 
