@@ -3,10 +3,22 @@ title: "Text Classification (NLTK)"
 date: 2020-05-28
 tags: [nltk, text classification, nlp]
 header:
-  image: "/images/webs.png"
+  image: "/images/nlp.png"
 excerpt: "NLTK, Text Classification, Data Science, NLP"
 mathjax: "true"
 ---
+## OBJECTIVE: Classification/Prediction of texts which belongs to nine different categories/books of the Gutenberg’s digital corpus by using various ML classification algorithm and then choosing the best algorithm for the purpose depending on their performance.##
+
+The main steps involved are : 
+
+1. DATA PREPARATION AND CLEANING
+2. WORD TO VECTOR TRANFORMATION
+3. MODELING
+4. PERFORMANCE EVALUATION
+5. ERROR ANALYSIS
+
+A more detailed explation of this project can be found in the repository [here](https://github.com/gaurav-arena/Text-Classification-NLTK)
+
 **IMPORTING THE NECESSARY LIBRARIES**
 
 
@@ -152,7 +164,7 @@ plt.show()
 ```
 
 
-![png](Text_Classification_NLTK_files/Text_Classification_NLTK_12_0.png)
+![png](images/Text_Classification_NLTK_files/Text_Classification_NLTK_12_0.png)
 
 
 **TOKENIZING THE SELECTED TEXTS INTO SENTENCES**
@@ -251,7 +263,7 @@ plt.show()
 ```
 
 
-![png](Text_Classification_NLTK_files/Text_Classification_NLTK_23_0.png)
+![png](images/Text_Classification_NLTK_files/Text_Classification_NLTK_23_0.png)
 
 
 **DEFINING ANOTHER FUNTION (random_sample) TO ASSIGN 100 WORDS TO A DOCUMENT AND PICK 150 RANDOM DOCUMENTS FROM EACH TEXT**
@@ -2962,7 +2974,7 @@ plt.show()
 ```
 
 
-![png](Text_Classification_NLTK_files/Text_Classification_NLTK_67_0.png)
+![png](images/Text_Classification_NLTK_files/Text_Classification_NLTK_67_0.png)
 
 
 **Visualizing the accuracies of the model (Bag Of Words)**
@@ -3060,7 +3072,7 @@ plt.show()
 ```
 
 
-![png](Text_Classification_NLTK_files/Text_Classification_NLTK_77_0.png)
+![png](images/Text_Classification_NLTK_files/Text_Classification_NLTK_77_0.png)
 
 
 **ERROR ANALYSIS:**
