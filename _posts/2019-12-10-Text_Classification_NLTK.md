@@ -7,7 +7,7 @@ header:
 excerpt: "NLTK, Text Classification, Data Science, NLP"
 mathjax: "true"
 ---
-## OBJECTIVE: Classification/Prediction of texts which belongs to nine different categories/books of the Gutenberg’s digital corpus by using various ML classification algorithm and then choosing the best algorithm for the purpose depending on their performance.##
+## OBJECTIVE: Classification/Prediction of texts which belongs to nine different categories/books of the Gutenberg’s digital corpus by using various ML classification algorithm and then choosing the best algorithm for the purpose depending on their performance.
 
 The main steps involved are : 
 
@@ -45,7 +45,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 ```
 
-**DOWNLOADING THE RELEVANT RESOURCES FROM NLTK**
+**DOWNLOADING THE RELEVANT RESOURCES FROM THE NLTK CORPUS**
 
 
 ```python
@@ -164,7 +164,7 @@ plt.show()
 ```
 
 
-![png](images/Text_Classification_NLTK_files/Text_Classification_NLTK_12_0.png)
+![png](/images/Text_Classification_NLTK_files/Text_Classification_NLTK_12_0.png)
 
 
 **TOKENIZING THE SELECTED TEXTS INTO SENTENCES**
@@ -187,7 +187,7 @@ sent9 = nltk.sent_tokenize(text9)
 #print(sent3)
 ```
 
-## ***PREPROCESSING OF THE DATA***
+**PREPROCESSING OF THE DATA**
 
 **DEFINING A FUNCTION (word_list) TO REMOVE STOPWORDS, NUMBERS, PUNCTUATIONS AS WELL AS LEMMATIZE**
 
@@ -229,7 +229,7 @@ words8 = word_list(sent8)
 words9 = word_list(sent9)
 ```
 
-***CHECKING FOR THE LENGHT OF THE TEXTS AFTER THE FIRST FUNTION WAS APPLIED***
+**CHECKING FOR THE LENGHT OF THE TEXTS AFTER THE FIRST FUNTION WAS APPLIED**
 
 
 ```python
@@ -253,7 +253,7 @@ print(n_o_w)
     8            24538       bryant-stories
     
 
-***VISUALIZATION OF THE LENGHT OF THE TEXTS***
+**VISUALIZATION OF THE LENGHT OF THE TEXTS**
 
 
 ```python
@@ -263,7 +263,7 @@ plt.show()
 ```
 
 
-![png](images/Text_Classification_NLTK_files/Text_Classification_NLTK_23_0.png)
+![png](/images/Text_Classification_NLTK_files/Text_Classification_NLTK_23_0.png)
 
 
 **DEFINING ANOTHER FUNTION (random_sample) TO ASSIGN 100 WORDS TO A DOCUMENT AND PICK 150 RANDOM DOCUMENTS FROM EACH TEXT**
@@ -608,7 +608,7 @@ pd.DataFrame(y).head()
 
 
 
-## ***FEATURE ENGINEERING***
+**FEATURE ENGINEERING**
 **TRANSFORMATION OF THE TEXT USING BAG OF WORDS**
 
 
@@ -2747,7 +2747,7 @@ X_Tfid
 
 
 
-## ***MODELING THE PREDICTOR USING VARIOUS ML ALGORITHMS***
+**USING VARIOUS ML ALGORITHMS FOR MODELING THE PREDICTOR**
 
 **Random Forest Classifier with Bag Of Words:**
 
@@ -2974,7 +2974,7 @@ plt.show()
 ```
 
 
-![png](images/Text_Classification_NLTK_files/Text_Classification_NLTK_67_0.png)
+![png](/images/Text_Classification_NLTK_files/Text_Classification_NLTK_67_0.png)
 
 
 **Visualizing the accuracies of the model (Bag Of Words)**
@@ -2990,7 +2990,7 @@ sns.stripplot(x='model_name', y='accuracy', data=cv_df,
 plt.show()
 ```
 
-### ***MODEL EVALUATION***
+**MODEL EVALUATION**
 **SVC  (TF-IDF)**
 
 
@@ -3072,7 +3072,7 @@ plt.show()
 ```
 
 
-![png](images/Text_Classification_NLTK_files/Text_Classification_NLTK_77_0.png)
+![png](/images/Text_Classification_NLTK_files/Text_Classification_NLTK_77_0.png)
 
 
 **ERROR ANALYSIS:**
