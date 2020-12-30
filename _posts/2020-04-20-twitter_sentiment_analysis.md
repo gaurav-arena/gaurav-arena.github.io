@@ -10,6 +10,7 @@ mathjax: "true"
 # Twitter Sentiment Analysis
 
 This notebook is a twitter sentiment analysis of the Apple WWDC 2020 to get an idea about how the people on twitter were reacting to the WWDC and the announcements made there.
+A more detaied repository of this project can be found [here.](https://github.com/gaurav-arena/Twitter-Sentiment-Analysis)
 
 WWDC : The Apple Worldwide Developers Conference (Apple WWDC) is its annual Worldwide Developers Conference which includes exciting reveals, inspiration, and new opportunities for the developers to continue creating the most innovative apps in the world. The WWDC 2020 was held remotely this year due to the Covid-19 pandemic. 
 
@@ -46,7 +47,6 @@ The 'twitter.properties' file is a property file which consists of all the neces
 
 Using the configparser to read the properties file which contains the twitter access tokens and api keys:
 ```python
-
 config = configparser.RawConfigParser()
 config.read('twitter.properties')
 
@@ -58,7 +58,6 @@ print(config.sections())
 
 Storing the access tokens and apikeys from the properties file to local variables:
 ```python
-
 accesstoken=config.get('twitter','accesstoken')
 accesstokensecret=config.get('twitter','accesstokensecret')
 apikey=config.get('twitter','apikey')
@@ -69,7 +68,6 @@ To access the twitter api the authentication is performed by passing the apikey 
 
 Authenticating the access to twitter using the access tokens and api keys -
 ```python
-
 auth = tw.OAuthHandler(apikey,apisecretkey)
 auth.set_access_token(accesstoken,accesstokensecret)
 api = tw.API(auth, wait_on_rate_limit=True)
@@ -88,19 +86,12 @@ Due to limited computation power we are only selecting 200 tweets for the datase
 
 Getting the tweets containing the search word from the set date -
 ```python
-
 tweets = tw.Cursor(api.search,q=search_words,lang="en",since=date_since).items(200)
-```
-
-
-```python
-tweets
 ```
 
 Setting the tweets details like the geography, the tweet text, the user screen name and the user location in different columns:
 
 ```python
-
 tweet_details = [[tweet.geo, tweet.text, tweet.user.screen_name, tweet.user.location] for tweet in tweets]
 ```
 
@@ -114,7 +105,6 @@ tweet_df = pd.DataFrame(data=tweet_details, columns=['geo','text','user','locati
 
 Looking at the first 20 rows of the dataframe-
 ```python
-
 pd.set_option('max_colwidth',800)
 
 tweet_df.head(20)
@@ -352,7 +342,6 @@ tweet_df.location.value_counts()
 
 Defining a function to clean the tweets using regex-
 ```python
-
 def clean_tweets(text):
     text = re.sub('RT @[\w]*:','',text)
     text = re.sub('@[\w]*','',text)
@@ -363,13 +352,11 @@ def clean_tweets(text):
 
 Applying the cleaning function on the tweet text-
 ```python
-
 tweet_df['text']=tweet_df['text'].apply(lambda x: clean_tweets(x))
 ```
 
 Looking at the dataframe after cleaning the tweets-
 ```python
-
 tweet_df.head(20)
 ```
 
@@ -574,18 +561,10 @@ nltk.download('punkt')
     [nltk_data]   Package punkt is already up-to-date!
     
 
-
-
-
-    True
-
-
-
 So in the above code section we downloaded the 'twitter_samples' package from which we can use the sample of positive and negative tweets for trainning our model for the sentiment analysis
 
 Loading the positive and negative tweets from the twitter_samples package to local variables-
 ```python
-
 positive_tweets = twitter_samples.strings('positive_tweets.json')
 negative_tweets = twitter_samples.strings('negative_tweets.json')
 text = twitter_samples.strings('tweets.20150430-223406.json')
@@ -593,7 +572,6 @@ text = twitter_samples.strings('tweets.20150430-223406.json')
 
 Tokenizing the tweets-
 ```python
-
 positive_tweet_tokens = twitter_samples.tokenized('positive_tweets.json')
 negative_tweets_token = twitter_samples.tokenized('negative_tweets.json')
 ```
@@ -625,7 +603,6 @@ It is important to first clean and then tokenize the positive and negative twitt
 Defining a function to remove noise from the tweets-
 
 ```python
-
 def remove_noise(tweet_tokens, stop_words = ()):
 
     cleaned_tokens = []
@@ -652,7 +629,6 @@ def remove_noise(tweet_tokens, stop_words = ()):
 
 Removing the stop words from the positive and negative tweet samples-
 ```python
-
 stop_words = stopwords.words('english')
 
 positive_cleaned_tokens_list = []
@@ -667,7 +643,6 @@ for tokens in negative_tweets_token:
 
 Collecting the positive and negative words from the twitter samples-
 ```python
-
 def get_all_words(cleaned_tokens_list):
     for tokens in cleaned_tokens_list:
         for token in tokens:
@@ -679,7 +654,6 @@ all_neg_words = get_all_words(negative_cleaned_tokens_list)
 
 Checking the frequency of 10 most repeated words in the positive tweets-
 ```python
-
 freq_dist_pos = FreqDist(all_pos_words)
 print(freq_dist_pos.most_common(10))
 
@@ -690,7 +664,6 @@ print(freq_dist_pos.most_common(10))
 
 Checking the frequency of 10 most repeated words in the positive tweets-
 ```python
-
 freq_dist_neg = FreqDist(all_neg_words)
 print(freq_dist_neg.most_common(10))
 ```
@@ -702,7 +675,6 @@ Now it is important to label the tokenized words as positive or negative to use 
 
 Defining a function to get tokens for trainning the model-
 ```python
-
 def get_tweets_for_model(cleaned_tokens_list):
     for tweet_tokens in cleaned_tokens_list:
         yield dict([token, True] for token in tweet_tokens)
@@ -713,7 +685,6 @@ negative_tokens_for_model = get_tweets_for_model(negative_cleaned_tokens_list)
 
 Giving labels to the positive and negative tweet tokens as needed for a supervised classification model-
 ```python
-
 positive_dataset = [(tweet_dict, "Positive")
                      for tweet_dict in positive_tokens_for_model]
 
@@ -732,7 +703,6 @@ We have chosen a Naive Bayes Classifier model for our sentiment analysis purpose
 
 Trainning and testing the model: 
 ```python
-
 classifier = NaiveBayesClassifier.train(train_data)
 
 print("Accuracy is:", classify.accuracy(classifier, test_data))
@@ -757,7 +727,6 @@ print(classifier.show_most_informative_features(10))
 
 Appending a column called 'Sentiment' to the dataset inorder to see the tweet and their respective sentiment together-
 ```python
-
 tweet_df['Sentiment']= tweet_df['text'].apply(lambda x: classifier.classify(dict([token, True] for token in remove_noise(word_tokenize(x)))))
 ```
 
@@ -845,7 +814,6 @@ So as can be seen from the above dataframe that the 'Sentiment' column represent
 
 Analysing the overall sentiment of the twitter user towards the WWDC-
 ```python
-
 tweet_df['Sentiment'].value_counts()
 ```
 
@@ -860,7 +828,6 @@ tweet_df['Sentiment'].value_counts()
 
 Plotting the overall sentiment for a better visualization-
 ```python
-
 plt.figure(figsize=(20,5))
 plt.subplots_adjust(left=0.125, bottom=0.1, right=0.9, top=0.9,wspace=0.5, hspace=0.2)
 plt.style.use('ggplot')
