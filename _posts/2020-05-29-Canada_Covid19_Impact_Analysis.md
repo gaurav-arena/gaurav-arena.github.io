@@ -1886,9 +1886,6 @@ plt.tight_layout()
 
 
 
-    <Figure size 432x288 with 0 Axes>
-
-
 So as we can observe that the workhours for all the listed industries have decreased. To better analyze the decreas in the workhours industry wise, let's visualize the percentage decrease in workhours over these months:
 
 
