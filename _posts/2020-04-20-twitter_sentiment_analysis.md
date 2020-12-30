@@ -3,7 +3,7 @@ title: "Twitter Setiment Analysis"
 date: 2020-04-20
 tags: [nltk, sentiment analysis, twitter data wrangling]
 header:
-  image: "/images/webs.png"
+  image: "/images/twitter.png"
 excerpt: "NLTK, Sentiment Analysis, Twitter Data Wrangling"
 mathjax: "true"
 ---
