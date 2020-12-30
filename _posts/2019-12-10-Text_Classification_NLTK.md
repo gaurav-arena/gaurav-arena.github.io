@@ -588,9 +588,9 @@ pd.DataFrame(y).head()
 
 
 **FEATURE ENGINEERING**
-**TRANSFORMATION OF THE TEXT USING BAG OF WORDS**
-
 Feature transformation is an approach for converting all the textual data into numeric form as the Machine Learning Algorithms work only with numeric data. Since we only have textual data available, the numeric features are extracted by using two different techniques which are Bag-of-Words (BOW) and Term Frequency-Inverse Document Frequency (TF-IDF). These are discussed below.
+
+**TRANSFORMATION OF THE TEXT USING BAG OF WORDS**
 
 ```python
 count = CountVectorizer(min_df=3, analyzer='word', ngram_range=(1,2), max_features=5000) #CONSIDERING BOTH BIGRAMS AND UNIGRAMS, IGNORING WORDS THAT HAVE A DOCUMENT FREQUENCY OF LESS THAN 3 AND CONSIDERING THE TOP 5000 FEATURES BASED ON FREQUENCY ACROSS THE CORPUS.
@@ -654,10 +654,10 @@ X_Tfid
 
 The Machine Learning algorithms we used and compared for this classification problem are:
 
-Random Forest
-Support Vector Machine
-K-Nearest Neighbor
-Decision Tree
+1. Random Forest
+2. Support Vector Machine
+3. K-Nearest Neighbor
+4. Decision Tree
 
 **Random Forest Classifier with Bag Of Words:**
 
