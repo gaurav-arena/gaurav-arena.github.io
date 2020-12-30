@@ -11,7 +11,7 @@ mathjax: "true"
 
 The main steps involved are : 
 
-1. DATA PREPARATION AND CLEANING
+1. DATA PREPARATION & CLEANING
 2. WORD TO VECTOR TRANFORMATION
 3. MODELING
 4. PERFORMANCE EVALUATION
@@ -84,7 +84,9 @@ nltk.corpus.gutenberg.fileids()
      'shakespeare-macbeth.txt',
      'whitman-leaves.txt']
 
+**DATA PREPARATION & CLEANING:**
 
+The data needs to be prepared and cleaned and it is an essential part of this assignment. Nine different books are selected based on their authors from the Gutenberg's digital corpus for having nine distinct classes with the aim of having distinct targets for the model. The NLTK library includes a small selection of texts from the Project Gutenberg electronic text archive, which contains some 25,000 free digital books. Thus to begin with, first the NLTK library was imported and nine distinct books/texts were selected from the Gutenberg corpus based on their authors.
 
 **ASSIGNING THE SELECTED TEXTS TO VARIABLES**
 
@@ -100,6 +102,7 @@ text7 = nltk.corpus.gutenberg.raw('chesterton-thursday.txt')
 text8 = nltk.corpus.gutenberg.raw('shakespeare-hamlet.txt')
 text9 = nltk.corpus.gutenberg.raw('bryant-stories.txt')
 ```
+The selected texts are then sentence tokenized and then a function was defined, named as ‘word_list’ and it has the capacity of removing unwanted punctuations and stop-words (as these would corrupt the training model and are therefore needed to be removed). The sentences were further tokenized to words and lemmatizing took place which is the process by which the all the words are reduced to the root words by using the morphological analysis of words and the vocabulary depending upon whether it’s a noun verb or an adjective. It helps in reducing the size of the data and also makes it convenient to keep track the specific words instead the same words used in different forms. Since there is a requirement for only words there’s a need to remove all data that doesn’t count as words e.g. numbers, punctuations etc. It reduces the size of the data as well as it makes the process faster. All the words are also transformed to lower case so that the computer doesn’t recognise same words in different cases as unlike.
 
 **VIEWING THE NUMBER OF WORDS IN EACH TEXT**
 
@@ -239,6 +242,7 @@ plt.show()
 
 ![png](/images/Text_Classification_NLTK_files/Text_Classification_NLTK_23_0.png)
 
+As the number of words in each of these 9 texts/books are not same, another function is then defined which is responsible for breaking down a book/text into multiple documents of 100 words each, and then selecting 150 random documents for each book/text. This function is used to make sure that the trained model is not biased to any particular text because of having more words from it, thus having same number of words from each text will ensure an unbiased model at the end. This function is applied to the processed texts from the previous step and stored in variables.
 
 **DEFINING ANOTHER FUNTION (random_sample) TO ASSIGN 100 WORDS TO A DOCUMENT AND PICK 150 RANDOM DOCUMENTS FROM EACH TEXT**
 
@@ -282,6 +286,7 @@ print(r_str1[4])
 
     lady must pay subsequent object lament heat suffer walk nothing when i get donwell say knightley could find very odd unaccountable note i send morning message return certainly home till one donwell cry wife my dear mr e donwell you mean crown come meet crown no morrow i particularly want see knightley day account such dreadful broil morning i go field speak tone great ill usage make much bad and find home i assure i please and apology leave message the housekeeper declare know nothing expect very extraordinary and nobody know way go perhaps hartfield perhaps abbey mill perhaps wood 
     
+Then we label each of this document obtained from the previous with the corresponding author's name and then we shuffle them, followed by storing them in a single dataframe.
 
 **ASSIGNING THE NAME OF THE AUTHOR OF EACH DOCUMENT TO THE RESPECTIVE DOCUMENT FOR LABELLING THEM**
 
@@ -379,7 +384,7 @@ pd.DataFrame(labeled_names)
 <p>1350 rows × 2 columns</p>
 </div>
 
-
+The Dataframe is then shuffled to avoid any bias and then we perform the word to vector transformation.
 
 **SHUFFLING THE LABELED NAMES AND VIEWING THEM IN A DATAFRAME USING PANDAS**
 
@@ -585,6 +590,7 @@ pd.DataFrame(y).head()
 **FEATURE ENGINEERING**
 **TRANSFORMATION OF THE TEXT USING BAG OF WORDS**
 
+Feature transformation is an approach for converting all the textual data into numeric form as the Machine Learning Algorithms work only with numeric data. Since we only have textual data available, the numeric features are extracted by using two different techniques which are Bag-of-Words (BOW) and Term Frequency-Inverse Document Frequency (TF-IDF). These are discussed below.
 
 ```python
 count = CountVectorizer(min_df=3, analyzer='word', ngram_range=(1,2), max_features=5000) #CONSIDERING BOTH BIGRAMS AND UNIGRAMS, IGNORING WORDS THAT HAVE A DOCUMENT FREQUENCY OF LESS THAN 3 AND CONSIDERING THE TOP 5000 FEATURES BASED ON FREQUENCY ACROSS THE CORPUS.
@@ -645,6 +651,13 @@ X_Tfid
 ```
 
 **USING VARIOUS ML ALGORITHMS FOR MODELING THE PREDICTOR :**
+
+The Machine Learning algorithms we used and compared for this classification problem are:
+
+Random Forest
+Support Vector Machine
+K-Nearest Neighbor
+Decision Tree
 
 **Random Forest Classifier with Bag Of Words:**
 
@@ -971,9 +984,11 @@ plt.show()
 
 ![png](/images/Text_Classification_NLTK_files/Text_Classification_NLTK_77_0.png)
 
+The accuracy for SVM algorithm (for both BOW and TF-IDF transformations) was the highest compared to all the other models, we have selected it as our champion model.
 
 **ERROR ANALYSIS:**
 
+Continuing with our best model (i.e. the Linear SVM), we looked at the confusion matrix in order to see the discrepancies between predicted and actual labels if any. And from the confusion matrix, we observed that most of the predictions made by the model were correct (as vast majority of the predictions were present at the diagonal). But there were a few misclassification and thus we tried to find the possible reason behind these misclassifications.
 
 ```python
 encoding = [(0,'austen'),(1,'bible'),(2,'whitman'),(3,'milton'),(4,'melville'),(5, 'edgeworth'),(6,'chesterton'),(7,'shakespear'),(8,'bryant')]
@@ -989,6 +1004,5 @@ for predicted in auth.Label:
         if predicted != actual and conf_mat[actual, predicted] >= 1:
             print("'{}' predicted as '{}' : {} examples.".format(y_test[actual],y_pred[predicted], conf_mat[actual, predicted]))
         display(labeled.loc[indices_test[(y_test == actual) & (y_pred == predicted)]][['Author', 'Text']])
-      #print(y_test.tolist().index(actual))
       print('')
 ```
