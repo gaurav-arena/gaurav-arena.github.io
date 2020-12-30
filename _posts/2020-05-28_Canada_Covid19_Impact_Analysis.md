@@ -1,10 +1,10 @@
 ---
 title: "Canada Covid-19 Impact Analysis"
 date: 2020-05-28
-tags: [Data Analysis, Data Visulaization, Impact Analysis]
+tags: [Data Analysis, Data Visulaization, Impact Analysis, Data Wrangling]
 header:
-  image: "/images/webs.png"
-excerpt: "Data Analysis, Data Visualization, Impact Analysis"
+  image: "/images/canada.jpg"
+excerpt: "Data Analysis, Data Visualization, Impact Analysis, Data Wrangling"
 mathjax: "true"
 ---
 
@@ -1676,7 +1676,7 @@ plt.show()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_53_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_53_0.png)
 
 
 So as we can see, the GDP contribution by the industries has decreased which probably is the impact of the COVID-19 and the country-wide lockdown imposed for it. Though the GDP industry wise has decreased the share of their contribution compared to other industries have remained more or less the same. To find out which industries have the most and least decrease in their GDP, let's visualize the percentage increase/decrease in GDP industry wise.
@@ -1694,7 +1694,7 @@ plt.show()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_55_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_55_0.png)
 
 
 Thus from the above plot we can observe that the decrease in GDP was highest for the 'Arts, entertainment and recreation' industry (decreased by more than 41.28%), followed by the 'Accomodation and food services' industry (decreased by more than 37.67%), these are the hardest hit industries in terms of GDP. The GDP for the 'Real estate and rental and leasing' (decreased by 0.2%) and the 'Non-durable manfucaturing'(decreased by 0.083%) industries did not decrease much over the months from Nov-2019 to Mar-2020.
@@ -1714,7 +1714,7 @@ plt.show()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_58_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_58_0.png)
 
 
 
@@ -1750,7 +1750,7 @@ plt.show()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_59_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_59_0.png)
 
 
 * Thus as we saw before and can also be noted from the above plots that the GDP for industries like 'Arts, entertainment and recreation', Accommodation and food services' have significantly decreased over these months.
@@ -1781,7 +1781,7 @@ plt.show()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_63_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_63_0.png)
 
 
 So as we can observe that the CPI for certain products have like 'Gasoline' and 'Energy' have significantly decreased which is probably due to the lock-down imposed during these months. To better analyze the change in CPI product wise, let's visualize the percentage change in CPI over these months:
@@ -1799,7 +1799,7 @@ plt.show()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_65_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_65_0.png)
 
 
 * Thus from the above plot we can observe that the CPI decreased for some products and there was a significant decrease in CPI for 'Gasoline'(decreased by more than 31.48% ) and 'Energy'(decreased by more than 18.95% ). 
@@ -1818,7 +1818,7 @@ plt.show()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_68_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_68_0.png)
 
 
 
@@ -1852,7 +1852,7 @@ plt.tight_layout()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_69_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_69_0.png)
 
 
 * Thus as we saw before and can also note from the above plots that the CPI for products like 'Gasoline', 'Energy' have significantly decreased over these months.
@@ -1884,7 +1884,7 @@ plt.tight_layout()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_73_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_73_0.png)
 
 
 
@@ -1905,7 +1905,7 @@ plt.show()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_75_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_75_0.png)
 
 
 * Thus from the above plot we can observe that the decrease in workhours was highest for the 'Accomodation and food services' industry (decreased by more than 62.63%), followed by the 'Other services (except public administration)' industry (decreased by more than 40.17%), these are the hardest hit industries in terms of workhours. 
@@ -1925,7 +1925,7 @@ plt.show()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_78_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_78_0.png)
 
 
 
@@ -1959,7 +1959,7 @@ plt.tight_layout()
 ```
 
 
-![png](Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_79_0.png)
+![png](/images/Canada_Covid19_Impact_Analysis_files/Canada_Covid19_Impact_Analysis_79_0.png)
 
 
 * Thus as we saw before and can also note from the above plots that the workhours for industries like 'Accomodation and food services' have significantly decreased over these months.
