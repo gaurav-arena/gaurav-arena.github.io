@@ -1,6 +1,6 @@
 ---
 title: "Canada Covid-19 Impact Analysis"
-date: 2020-05-28
+date: 2020-05-29
 tags: [Data Analysis, Data Visulaization, Impact Analysis, Data Wrangling]
 header:
   image: "/images/canada.jpg"
