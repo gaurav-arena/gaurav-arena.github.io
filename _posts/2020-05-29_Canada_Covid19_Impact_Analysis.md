@@ -8,8 +8,6 @@ excerpt: "Data Analysis, Data Visualization, Impact Analysis, Data Wrangling"
 mathjax: "true"
 ---
 
-
-
 **Objective:** This notebook is a an attempt to analyze the impact of the Covid-19 on Canada and it's economy over the months by using the datasets produced by the Statistics Canada. Statistics Canada (French: Statistique Canada), formed in 1971, is the Canadian government agency commissioned with producing statistics to help better understand Canada, its population, resources, economy, society, and culture. 
 
 We will be basically using three main indicators the GDP, CPI and the working hours and how they have been impacted by the covid-19 to analyze it's impact on the canadian economy. So before starting let's first try to understand what these indicators indicate:
