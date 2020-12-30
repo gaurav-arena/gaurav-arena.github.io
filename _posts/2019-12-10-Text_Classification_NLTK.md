@@ -1,6 +1,6 @@
 ---
 title: "Text Classification (NLTK)"
-date: 2020-05-28
+date: 2019-12-10
 tags: [nltk, text classification, nlp]
 header:
   image: "/images/nlp.png"
